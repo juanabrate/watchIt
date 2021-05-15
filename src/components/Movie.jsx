@@ -16,7 +16,7 @@ useEffect(() => {
 
 )}, []);
 
-console.log(details)
+// console.log(details)
 
 let popularity = details && details.popularity;
 let genres = details && details.genres;
@@ -32,7 +32,7 @@ let plot = details.overview;
 
 
     return (
-        <div style={{display:'flex', flexDirection:'row', padding: '3%', alignContent:'center'}}>
+        <div style={{fontFamily:'calibri', display:'flex', flexDirection:'row', padding: '3%', alignContent:'center', backgroundColor:'black', color:'white'}}>
             
             <img src={poster} alt="No image found :/"/>
 
@@ -41,13 +41,14 @@ let plot = details.overview;
                 <h1 style={{fontSize:'35px', textAlign:'left'}}>{details.title}
                 <span style={{paddingLeft:'20%', fontSize:'22px'}}>{vote}<b style={{color: 'yellow'}}>★</b></span>
                 </h1>
-                <div style={{display:'flex', flexDirection:'row', fontSize:'13px'}}>
+                <div style={{display:'flex', flexDirection:'row', fontSize:'13px', color:'grey', marginTop:'-2%'}}>
                     <b>{year}</b>&nbsp;&nbsp;&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;&nbsp;&nbsp;<b> {duration} min</b>
                 </div>
+                {/* <p style={{fontSize:'12px', textAlign:'left'}}>"{tagline}"</p> */}
                 <p style={{fontSize:'14px', textAlign:'left', marginTop:'10%'}}>
                     {plot}
                 </p>
-                <div style={{display:'flex', flexDirection:'row', fontSize:'12px', marginTop:'5%'}}>
+                <div style={{display:'flex', flexDirection:'row', fontSize:'12px', marginTop:'5%',color:'grey'}}>
                     
                             {genres && genres.map(g => 
                                 <p key={g.id}>{g.name}&nbsp;&nbsp;</p>

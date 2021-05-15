@@ -1,0 +1,11 @@
+GET https://api.themoviedb.org/3/movie/550?api_key=4295c0e29a9f109077cc7792f1675b63
+
+# movie by num search
+
+###
+
+GET https://api.themoviedb.org/3/search/movie?api_key=4295c0e29a9f109077cc7792f1675b63&query=The    
+
+# movie by keyword search 
+
+###

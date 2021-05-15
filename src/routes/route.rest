@@ -11,3 +11,5 @@ GET https://api.themoviedb.org/3/search/movie?api_key=4295c0e29a9f109077cc7792f1
 ###
 
 
+
+GET 'https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22'

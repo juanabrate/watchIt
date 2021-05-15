@@ -42,9 +42,9 @@ export default function Search({ config }) {
             <div className='movies'>
                 
                 {query != "" ? movies.map((item) => 
-                    <div style={{display:'flex', flexDirection:'row'}}>
+                    <div style={{display:'flex', flexDirection:'row', justifyContent:'center'}}>
                         <p key={item.id}>{item.original_title}</p>
-                        <img src={`http://image.tmdb.org/t/p/w92${item.poster_path}`}/>
+                        <img src={`http://image.tmdb.org/t/p/w92${item.poster_path}`} alt="No image found"/>
                     </div>
                 ) : null}
 

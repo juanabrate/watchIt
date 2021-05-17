@@ -2,17 +2,28 @@ import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import Loader from "react-loader-spinner";
+import { UseFavs, UpdateFavs } from './favLogic';
 
 export default function Movie() {
+
+const favs = UseFavs();
+console.log('favs',favs);
+const pushF = UpdateFavs();
 
 const { id } = useParams(); 
 
 const [details, setDetails] = useState({});
+const [loading, setLoading] = useState(true);
 
 useEffect(() => {
 
     axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4295c0e29a9f109077cc7792f1675b63`)
-    .then(res => setDetails(res && res.data)  
+    .then(res => setDetails(res && res.data),
+
+    setLoading(false)
+
+    
 
 )}, []);
 
@@ -29,9 +40,10 @@ let status = details && details.status;
 let duration = details && details.runtime;
 let plot = details.overview;
 
+    
 
+    return loading ? <Loader type='Grid' color='white' timeout={3000}/> : (
 
-    return (
         <div style={{fontFamily:'calibri', display:'flex', flexDirection:'row', padding: '3%', alignContent:'center', backgroundColor:'black', color:'white'}}>
             
             <img src={poster} alt="No image found :/"/>
@@ -54,7 +66,14 @@ let plot = details.overview;
                                 <p key={g.id}>{g.name}&nbsp;&nbsp;</p>
                             )}
                 </div>
+                <div>
+                    {/* <button onClick={() => favs.push({title: details.title, id: id, poster: poster})} style={{float:'left', marginTop:'5%', borderRadius:'10%', fontFamily:'calibri'}}>
+                        FAV
+                    </button> */}
+                </div>
+                
             </div>      
+            
         </div>
     )
 }
@@ -75,4 +94,6 @@ const Plot = styled.p`
     width: 30%;
     text-align: left;
 `
+
+
 

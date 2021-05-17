@@ -27,8 +27,7 @@ export default function Search() {
                     setLoading(false);
 
                     setMovies(res.data.results);
-                    console.log(movies)
-                    console.log(res);
+                    
 
                 });
         }
@@ -36,24 +35,24 @@ export default function Search() {
 
 
     return (
-        <div>
+        <div style={{backgroundColor:'black', paddingTop:'2%'}}>
 
-            <input type='text' onChange={e => setQuery(e.target.value)} /> 
+            <input placeholder='Movies' type='text' onChange={e => setQuery(e.target.value)} /> 
 
-            <div className='movies'>
+            <div style={{marginTop:'3%',justifyContent:'center', textAlign:'left', display:'flex', flexDirection:'column'}}>
                 
                 {query != "" ? movies.map((item) => 
-                    <div style={{display:'flex', flexDirection:'row', justifyContent:'center'}}>
-                        <NavLink to={`/movie/${item.id}`}>
-                            <p key={item.id}>{item.original_title}</p>
+                    <div style={{textAlign:'left', display:'flex', flexDirection:'row', justifyContent:'center', paddingBottom:'2%', alignItems:'center'}}>
+                        <NavLink key={item.id} style={{textAlign:'left',textDecoration:'none'}} to={`/movie/${item.id}`}>
+                            <Links key={item.id}>{item.original_title}</Links>
                         </NavLink>
-                        
-                        <img src={`http://image.tmdb.org/t/p/w92${item.poster_path}`} alt="No image found"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img key={item.id} src={`http://image.tmdb.org/t/p/w92${item.poster_path}`} alt="No image found"/>
                     </div>
                 ) : null}
 
             </div>
-
+            <div style={{backgroundColor:'black', height:'100vh'}}></div>
             {/* {loading ? <p>di} */}
 
         </div>
@@ -63,3 +62,11 @@ export default function Search() {
 
     )
 }
+
+const Links = styled.p`
+text-align: left;
+text-decoration: none;
+color:white;
+
+
+`

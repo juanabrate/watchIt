@@ -34,12 +34,12 @@ export default function Search() {
     }, [query]);
 
     let release = movies && movies.release_date;
-    let year = release && release.substr(0,4);
+    // let year = release && release.substr(0,4);
 
     return (
         <div style={{backgroundColor:'black', paddingTop:'2%'}}>
 
-            <input placeholder='Movies' type='text' onChange={e => setQuery(e.target.value)} /> 
+            <Input placeholder='Movies' type='text' onChange={e => setQuery(e.target.value)} /> 
 
             <div style={{marginTop:'3%',justifyContent:'center', textAlign:'left', display:'flex', flexDirection:'column'}}>
                 
@@ -61,7 +61,7 @@ export default function Search() {
                 ) : null}
 
             </div>
-            <div style={{backgroundColor:'black', height:'100vh'}}></div>
+            <div style={{backgroundColor:'black', height:'83vh'}}></div>
             {/* {loading ? <p>di} */}
 
         </div>
@@ -99,4 +99,10 @@ transition:0.3s;
     transform: scale(1.1);
     transition-duration:0.3s;
 }
+`
+
+const Input = styled.input`
+border-radius:1px;
+/* background-color:grey; */
+border-style:none;
 `

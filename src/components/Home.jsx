@@ -41,6 +41,7 @@ export default function Home() {
     let id11 = upcoming && upcoming[11] && upcoming[11].id;
 
     return (
+            <>
         <div style={{position:'relative', backgroundColor:'black'}}>
             {/* <div className="h1"><h2>Upcoming</h2></div>
             <div className="h2"><h1>2021</h1></div> */}
@@ -106,5 +107,7 @@ export default function Home() {
             </NavLink>                  
                 </div>
         </div>
+        <footer style={{backgroundColor:'black', height:'30vh'}}></footer>
+        </>
     ) 
 }

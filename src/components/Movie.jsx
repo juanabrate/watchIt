@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 import Loader from "react-loader-spinner";
 import {UpdateFavs} from './favLogic';
 
@@ -43,7 +43,7 @@ let plot = details.overview;
 // console.log(favs);
 
     return loading ? <Loader type='Grid' color='white' timeout={3000}/> : (
-
+<>
         <div style={{fontFamily:'calibri', display:'flex', flexDirection:'row', padding: '3%', alignContent:'center', backgroundColor:'black', color:'white'}}>
             
             <img src={poster} alt=":/"/>
@@ -67,18 +67,35 @@ let plot = details.overview;
                             )}
                 </div>
                 <div>
-                    <button onClick={() => pushFavs(details)} style={{float:'left', marginTop:'5%', borderRadius:'10%', fontFamily:'calibri'}}>
+                    <Button onClick={() => pushFavs(details)}>
                         FAV
-                    </button>
+                    </Button>
                 </div>
                 
             </div>      
             
+            
         </div>
+        <footer style={{backgroundColor:'black', height:'10vh'}}></footer>
+        </>
     )
 }
 
-
+const Button = styled.button`
+float:left;
+margin-top:5%;
+border-radius:10%;
+font-family: calibri;
+background-color:black;
+color:white;
+border-width:1px;
+transition:0.5s;
+&:hover{
+    border-color: gold;
+    color: gold;
+    transition-duration:0.5s;
+}
+`
 
 // const RowDiv = styled.div`
 //     display: flex;

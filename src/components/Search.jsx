@@ -22,7 +22,7 @@ export default function Search() {
             await axios(queryUrl)
             .then(res => {  
                 setMovies(res.data.results);   
-                setTimeout(function(){ setLoading(false); }, 1500);                 
+                setTimeout(function(){ setLoading(false); }, 1000);                 
             });
         } 
         if (query !== "") {       
@@ -38,13 +38,17 @@ export default function Search() {
 
             <Input type='text' placeholder="Search..." onChange={e => setQuery(e.target.value)} /> 
 
-            <div style={{position:'relative', marginTop:'3%',justifyContent:'center', textAlign:'left', display:'flex', flexDirection:'column'}}>
+            <div style={{marginTop:'3%',justifyContent:'center', textAlign:'left', display:'flex', flexDirection:'column'}}>
                 
-                {loading ? <div style={{paddingLeft:'15%'}}>
+                {loading ?
+                
+                <div style={{width:'100%', display:'flex', alignItems:'center', justifyContent:'center', alignContent:'center'}}>
                     <Loader type="ThreeDots" color="cyan"/>
-                </div> : null}
+                </div> 
+                
+                : 
 
-                {query !== "" ? movies.map((item) => 
+                query !== "" ? movies.map((item) => 
                 <NavLink style={{textAlign:'justify',textDecoration:'none'}} to={`/movie/${item.id}`}>
                     <Div>
                         <span style={{left:'30%', position:'absolute', maxWidth:'350px', fontFamily:'calibri', fontSize:'19px'}}>

@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
 import './Home.css';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 
-const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0Mjk1YzBlMjlhOWYxMDkwNzdjYzc3OTJmMTY3NWI2MyIsInN1YiI6IjYwOWU5N2Y2ODM5MDE4MDAzZmNjMzlhYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Bm5rF54lpCwETLSTpUOcWkeCAORlii85ar4SbkSGmKY';
+// const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0Mjk1YzBlMjlhOWYxMDkwNzdjYzc3OTJmMTY3NWI2MyIsInN1YiI6IjYwOWU5N2Y2ODM5MDE4MDAzZmNjMzlhYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Bm5rF54lpCwETLSTpUOcWkeCAORlii85ar4SbkSGmKY';
 
 export default function Home() {
 
@@ -48,61 +47,61 @@ export default function Home() {
         <div className="grid">
             <NavLink to={`/movie/${id}`}>
                 <div className="grid-item grid-item-1">
-                    <img src={`http://image.tmdb.org/t/p/w342${path}`} alt="No image" />
+                    <img src={`http://image.tmdb.org/t/p/w342${path}`} alt=":/" />
                 </div> 
             </NavLink>
             <NavLink to={`/movie/${id1}`}>
             <div className="grid-item grid-item-2">
-                    <img src={`http://image.tmdb.org/t/p/w342${path1}`} alt="No image" />
+                    <img src={`http://image.tmdb.org/t/p/w342${path1}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id2}`}>
             <div className="grid-item grid-item-3">
-                    <img src={`http://image.tmdb.org/t/p/w342${path2}`} alt="No image" />
+                    <img src={`http://image.tmdb.org/t/p/w342${path2}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id3}`}>
             <div className="grid-item grid-item-4">
-                    <img src={`http://image.tmdb.org/t/p/w342${path3}`} alt="No image" />
+                    <img src={`http://image.tmdb.org/t/p/w342${path3}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id4}`}>
             <div className="grid-item grid-item-5">
-                    <img src={`http://image.tmdb.org/t/p/w342${path4}`} alt="No image" />
+                    <img src={`http://image.tmdb.org/t/p/w342${path4}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id5}`}>
             <div className="grid-item grid-item-6">
-                    <img src={`http://image.tmdb.org/t/p/w342${path5}`} alt="No image" />
+                    <img src={`http://image.tmdb.org/t/p/w342${path5}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id6}`}>
             <div className="grid-item grid-item-7">
-                    <img src={`http://image.tmdb.org/t/p/w342${path6}`} alt="No image" />
+                    <img src={`http://image.tmdb.org/t/p/w342${path6}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id7}`}>
             <div className="grid-item grid-item-8">
-                    <img src={`http://image.tmdb.org/t/p/w342${path7}`} alt="No image" />
+                    <img src={`http://image.tmdb.org/t/p/w342${path7}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id8}`}>
             <div className="grid-item grid-item-9">
-                    <img src={`http://image.tmdb.org/t/p/w342${path8}`} alt="No image" />
+                    <img src={`http://image.tmdb.org/t/p/w342${path8}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id9}`}>
             <div className="grid-item grid-item-10">
-                    <img src={`http://image.tmdb.org/t/p/w342${path9}`} alt="No image" />
+                    <img src={`http://image.tmdb.org/t/p/w342${path9}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id10}`}>
             <div className="grid-item grid-item-11">
-                    <img src={`http://image.tmdb.org/t/p/w342${path10}`} alt="No image" />
+                    <img src={`http://image.tmdb.org/t/p/w342${path10}`} alt=":/" />
                     </div></NavLink> 
             <NavLink to={`/movie/${id11}`}>
             <div className="grid-item grid-item-12">
-                    <img src={`http://image.tmdb.org/t/p/w342${path11}`} alt="No image" />
+                    <img src={`http://image.tmdb.org/t/p/w342${path11}`} alt=":/" />
                     </div>
             </NavLink>                  
                 </div>

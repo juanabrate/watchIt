@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom';
 export default function Search() {   
     
     const [query, setQuery] = useState("");   
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -20,11 +20,11 @@ export default function Search() {
         const queryUrl = `https://api.themoviedb.org/3/search/movie?api_key=4295c0e29a9f109077cc7792f1675b63&query=${query}`;
         // const imgUrl = `http://image.tmdb.org/t/p/w342${img_path}`;
 
-        if (query != "") {
-            setLoading(true);
+        if (query !== "") {
+            // setLoading(true);s
             axios(queryUrl)
                 .then(res => {
-                    setLoading(false);
+                    // setLoading(false);
 
                     setMovies(res.data.results);
                     
@@ -41,7 +41,7 @@ export default function Search() {
 
             <div style={{marginTop:'3%',justifyContent:'center', textAlign:'left', display:'flex', flexDirection:'column'}}>
                 
-                {query != "" ? movies.map((item) => 
+                {query !== "" ? movies.map((item) => 
                     <div style={{position: 'relative', display:'flex', flexDirection:'row', justifyContent:'center', paddingBottom:'2%', alignItems:'center'}}>
                         <span style={{left:'34%', position:'absolute', maxWidth:'300px'}}>
                             <NavLink style={{textAlign:'justify',textDecoration:'none'}} to={`/movie/${item.id}`}>
@@ -49,7 +49,7 @@ export default function Search() {
                             </NavLink>
                         </span>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <img style={{float:'right', paddingLeft:'25%'}} src={`http://image.tmdb.org/t/p/w92${item.poster_path}`} alt="No image found"/>
+                        <img style={{float:'right', paddingLeft:'25%'}} src={`http://image.tmdb.org/t/p/w185${item.poster_path}`} alt=":/"/>
                     </div>
                 ) : null}
 

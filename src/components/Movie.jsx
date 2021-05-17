@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import Loader from "react-loader-spinner";
-import { UseFavs, UpdateFavs } from './favLogic';
+import {UpdateFavs} from './favLogic';
 
 export default function Movie() {
 
-const favs = UseFavs();
+
 const pushFavs = UpdateFavs();
 
 const { id } = useParams(); 
@@ -24,21 +24,21 @@ useEffect(() => {
 
     
 
-)}, []);
+)}, [id]);
 
 console.log('movie', details)
 
-let popularity = details && details.popularity;
+// let popularity = details && details.popularity;
 let genres = details && details.genres;
-let tagline = details && details.tagline;
+// let tagline = details && details.tagline;
 let vote = details && details.vote_average;
 let poster = details && `http://image.tmdb.org/t/p/w342${details.poster_path}`;
 let release = details && details.release_date;
 let year = release && release.substr(0,4);
-let status = details && details.status;
+// let status = details && details.status;
 let duration = details && details.runtime;
 let plot = details.overview;
-let movieId = details.id;
+// let movieId = details.id;
 
 // console.log(favs);
 
@@ -46,7 +46,7 @@ let movieId = details.id;
 
         <div style={{fontFamily:'calibri', display:'flex', flexDirection:'row', padding: '3%', alignContent:'center', backgroundColor:'black', color:'white'}}>
             
-            <img src={poster} alt="No image found :/"/>
+            <img src={poster} alt=":/"/>
 
             <div style={{paddingLeft:'7%', display:'flex', flexDirection:'column'}}>
                 
@@ -80,20 +80,20 @@ let movieId = details.id;
 
 
 
-const RowDiv = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /* align-items: center; */
-    padding: 5%;
-    margin-top: -4%;
-    /* width: 80%; */
-`
+// const RowDiv = styled.div`
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     /* align-items: center; */
+//     padding: 5%;
+//     margin-top: -4%;
+//     /* width: 80%; */
+// `
 
-const Plot = styled.p`
-    width: 30%;
-    text-align: left;
-`
+// const Plot = styled.p`
+//     width: 30%;
+//     text-align: left;
+// `
 
 
 

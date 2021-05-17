@@ -26,7 +26,7 @@ export function FavProvider({ children }) {
     }
 
     function remove(id) {
-       let newArr = favs.filter(el => el.id == id);
+       let newArr = favs.filter(el => el.id === id);
        setFavs(newArr); 
     }
 

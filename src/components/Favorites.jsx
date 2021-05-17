@@ -1,19 +1,15 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React from 'react';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
-import {UseFavs, Remove} from './favLogic';
-import axios from 'axios';
-
+import {UseFavs} from './favLogic';
  
 export default function Favorites() {   
     
     const favs = UseFavs();
-    const removeFavs = Remove();
-
-    const [movies, setMovies] = useState([]);
+    // const removeFavs = Remove();
     
 
-    console.log('favo', favs)
+    // console.log('favo', favs)
 
 
     return (
@@ -30,7 +26,7 @@ export default function Favorites() {
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </span>
                         
-                        <img style={{float:'right', paddingLeft:'30%'}} src={`http://image.tmdb.org/t/p/w92${item.poster_path}`} alt="No image found"/>
+                        <img style={{float:'right', paddingLeft:'30%'}} src={`http://image.tmdb.org/t/p/w92${item.poster_path}`} alt="Pic not found"/>
                         
                     {/* <button onClick={() => removeFavs(item.id)} style={{float:'left', marginTop:'5%', borderRadius:'10%', fontFamily:'calibri'}}>
                         X

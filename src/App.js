@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
@@ -16,12 +16,6 @@ const configUrl = `https://api.themoviedb.org/3/configuration?api_key=4295c0e29a
 console.log('config', axios(configUrl).then(res => {console.log(res)}));
 
 function App() {
-
-  const [config, setConfig] = useState(); 
-
-  useEffect(() => {
-    axios(configUrl).then(res => {setConfig(res.data)});
-  }, []);
 
   return (
 <FavProvider>

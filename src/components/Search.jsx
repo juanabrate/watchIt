@@ -103,6 +103,6 @@ transition:0.3s;
 
 const Input = styled.input`
 border-radius:1px;
-background-color:#999999;
+background-color:#CECECE;
 border-style:none;
 `

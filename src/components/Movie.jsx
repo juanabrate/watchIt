@@ -8,8 +8,7 @@ import { UseFavs, UpdateFavs } from './favLogic';
 export default function Movie() {
 
 const favs = UseFavs();
-console.log('favs',favs);
-const pushF = UpdateFavs();
+const pushFavs = UpdateFavs();
 
 const { id } = useParams(); 
 
@@ -27,7 +26,7 @@ useEffect(() => {
 
 )}, []);
 
-// console.log(details)
+console.log('movie', details)
 
 let popularity = details && details.popularity;
 let genres = details && details.genres;
@@ -39,8 +38,9 @@ let year = release && release.substr(0,4);
 let status = details && details.status;
 let duration = details && details.runtime;
 let plot = details.overview;
+let movieId = details.id;
 
-    
+// console.log(favs);
 
     return loading ? <Loader type='Grid' color='white' timeout={3000}/> : (
 
@@ -67,9 +67,9 @@ let plot = details.overview;
                             )}
                 </div>
                 <div>
-                    {/* <button onClick={() => favs.push({title: details.title, id: id, poster: poster})} style={{float:'left', marginTop:'5%', borderRadius:'10%', fontFamily:'calibri'}}>
+                    <button onClick={() => pushFavs(details)} style={{float:'left', marginTop:'5%', borderRadius:'10%', fontFamily:'calibri'}}>
                         FAV
-                    </button> */}
+                    </button>
                 </div>
                 
             </div>      

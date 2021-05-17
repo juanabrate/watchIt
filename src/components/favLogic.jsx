@@ -12,10 +12,12 @@ export function UpdateFavs() {
 }
 
 export function FavProvider({ children }) {
-    const [favs, setFavs] = useState([1]);
+    const [favs, setFavs] = useState([]);
 
     function pushFavs(nFav) {
-        setFavs([...favs, nFav])
+        if (!favs.includes(nFav)) {
+            setFavs([...favs, nFav])
+        }       
     }
 
     return (

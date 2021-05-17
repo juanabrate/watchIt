@@ -33,7 +33,7 @@ function App() {
           <Route exact path="/home" component={Home} /> 
           
             <Route exact path="/movie/:id" component={Movie} />        
-            <Route exact path="/favorite" component={Favorites} />
+            <Route exact path="/favorites" component={Favorites} />
         </BrowserRouter>   
       </div>
 </FavProvider>

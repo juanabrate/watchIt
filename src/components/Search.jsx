@@ -43,11 +43,11 @@ export default function Search() {
                 
                 {query != "" ? movies.map((item) => 
                     <div style={{textAlign:'left', display:'flex', flexDirection:'row', justifyContent:'center', paddingBottom:'2%', alignItems:'center'}}>
-                        <NavLink key={item.id} style={{textAlign:'left',textDecoration:'none'}} to={`/movie/${item.id}`}>
+                        <NavLink style={{textAlign:'left',textDecoration:'none'}} to={`/movie/${item.id}`}>
                             <Links key={item.id}>{item.original_title}</Links>
                         </NavLink>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <img key={item.id} src={`http://image.tmdb.org/t/p/w92${item.poster_path}`} alt="No image found"/>
+                        <img src={`http://image.tmdb.org/t/p/w92${item.poster_path}`} alt="No image found"/>
                     </div>
                 ) : null}
 

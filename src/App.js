@@ -19,15 +19,13 @@ function App() {
 
   return (
 <FavProvider>
-
       <div className="App">
         <BrowserRouter>      
           <Route path="/" component={Nav} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/home" component={Home} /> 
-          
-            <Route exact path="/movie/:id" component={Movie} />        
-            <Route exact path="/favorites" component={Favorites} />
+          <Route exact path="/movie/:id" component={Movie} />        
+          <Route exact path="/favorites" component={Favorites} />
         </BrowserRouter>   
       </div>
 </FavProvider>

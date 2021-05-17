@@ -91,12 +91,12 @@ padding-bottom:2%;
 padding-top:2%;
 margin-bottom:0.5%;
 align-items: center;
-border-style:solid;
-border-width:2px;
+/* border-style:solid;
+border-width:2px; */
 border-color: #202020;
-transition:0.5s;
+transition:0.3s;
 &:hover {
     transform: scale(1.1);
-    transition-duration:0.5s;
+    transition-duration:0.3s;
 }
 `

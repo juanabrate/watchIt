@@ -18,20 +18,22 @@ export default function Favorites() {
             <div style={{marginTop:'3%',justifyContent:'center', textAlign:'left', display:'flex', flexDirection:'column'}}>
                 
                 {favs ? favs.map((item) => 
-                    <div key={item.id} style={{position: 'relative', textAlign:'left', display:'flex', flexDirection:'row', justifyContent:'space-evenly', paddingBottom:'2%', alignItems:'center'}}>
+                <NavLink style={{textAlign:'left',textDecoration:'none'}} to={`/movie/${item.id}`}>
+                    <Div key={item.id} style={{position: 'relative', textAlign:'left', display:'flex', flexDirection:'row', justifyContent:'space-evenly', paddingBottom:'2%', alignItems:'center'}}>
                         <span style={{left:'34%', position:'absolute', maxWidth:'300px'}}>
-                        <NavLink style={{textAlign:'left',textDecoration:'none'}} to={`/movie/${item.id}`}>
+                        
                             <Links><b style={{color: 'yellow'}}>★</b>&nbsp;{item.original_title}</Links>
-                        </NavLink>
+                        
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </span>
                         
-                        <img style={{float:'right', paddingLeft:'30%'}} src={`http://image.tmdb.org/t/p/w92${item.poster_path}`} alt="Pic not found"/>
-                        
+                        <img style={{float:'right', paddingLeft:'30%'}} src={`http://image.tmdb.org/t/p/w185${item.poster_path}`} alt="Pic not found"/>
+                
                     {/* <button onClick={() => removeFavs(item.id)} style={{float:'left', marginTop:'5%', borderRadius:'10%', fontFamily:'calibri'}}>
                         X
                     </button> */}
-                </div>
+                </Div>
+                </NavLink>
                     
                 ) : null}
                 
@@ -52,6 +54,23 @@ const Links = styled.p`
 text-align: left;
 text-decoration: none;
 color:white;
+`
 
-
+const Div = styled.div`
+position:relative;
+display:flex;
+flex-direction:row;
+justify-content:center;
+padding-bottom:2%;
+padding-top:2%;
+margin-bottom:0.5%;
+align-items: center;
+/* border-style:solid;
+border-width:2px; */
+border-color: #202020;
+transition:0.3s;
+&:hover {
+    transform: scale(1.1);
+    transition-duration:0.3s;
+}
 `

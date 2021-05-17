@@ -9,6 +9,14 @@
 
 }
 
+.grid-item {
+    transition: 0.2s;
+}
+.grid-item:hover {
+    transform: scale(1.05);
+    transition-duration: 0.2s;
+}
+
 .h1 {
     color:grey;
     background-color: black;

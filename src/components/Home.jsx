@@ -46,61 +46,61 @@ export default function Home() {
             <div className="h2"><h1>2021</h1></div> */}
         <div className="grid">
             <NavLink to={`/movie/${id}`}>
-                <div className="grid-item grid-item-1">
+                <div className="grid-item">
                     <img src={`http://image.tmdb.org/t/p/w342${path}`} alt=":/" />
                 </div> 
             </NavLink>
             <NavLink to={`/movie/${id1}`}>
-            <div className="grid-item grid-item-2">
+            <div className="grid-item">
                     <img src={`http://image.tmdb.org/t/p/w342${path1}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id2}`}>
-            <div className="grid-item grid-item-3">
+            <div className="grid-item">
                     <img src={`http://image.tmdb.org/t/p/w342${path2}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id3}`}>
-            <div className="grid-item grid-item-4">
+            <div className="grid-item">
                     <img src={`http://image.tmdb.org/t/p/w342${path3}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id4}`}>
-            <div className="grid-item grid-item-5">
+            <div className="grid-item">
                     <img src={`http://image.tmdb.org/t/p/w342${path4}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id5}`}>
-            <div className="grid-item grid-item-6">
+            <div className="grid-item">
                     <img src={`http://image.tmdb.org/t/p/w342${path5}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id6}`}>
-            <div className="grid-item grid-item-7">
+            <div className="grid-item">
                     <img src={`http://image.tmdb.org/t/p/w342${path6}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id7}`}>
-            <div className="grid-item grid-item-8">
+            <div className="grid-item">
                     <img src={`http://image.tmdb.org/t/p/w342${path7}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id8}`}>
-            <div className="grid-item grid-item-9">
+            <div className="grid-item">
                     <img src={`http://image.tmdb.org/t/p/w342${path8}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id9}`}>
-            <div className="grid-item grid-item-10">
+            <div className="grid-item">
                     <img src={`http://image.tmdb.org/t/p/w342${path9}`} alt=":/" />
                     </div>
             </NavLink>
             <NavLink to={`/movie/${id10}`}>
-            <div className="grid-item grid-item-11">
+            <div className="grid-item">
                     <img src={`http://image.tmdb.org/t/p/w342${path10}`} alt=":/" />
                     </div></NavLink> 
             <NavLink to={`/movie/${id11}`}>
-            <div className="grid-item grid-item-12">
+            <div className="grid-item">
                     <img src={`http://image.tmdb.org/t/p/w342${path11}`} alt=":/" />
                     </div>
             </NavLink>                  

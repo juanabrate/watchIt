@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/watchit-movie-app/static/css/main.c87939c5.chunk.css",
+    "main.js": "/watchit-movie-app/static/js/main.7edbfb3b.chunk.js",
+    "main.js.map": "/watchit-movie-app/static/js/main.7edbfb3b.chunk.js.map",
+    "runtime-main.js": "/watchit-movie-app/static/js/runtime-main.9c549bbf.js",
+    "runtime-main.js.map": "/watchit-movie-app/static/js/runtime-main.9c549bbf.js.map",
+    "static/js/2.0a986069.chunk.js": "/watchit-movie-app/static/js/2.0a986069.chunk.js",
+    "static/js/2.0a986069.chunk.js.map": "/watchit-movie-app/static/js/2.0a986069.chunk.js.map",
+    "static/js/3.68b2cead.chunk.js": "/watchit-movie-app/static/js/3.68b2cead.chunk.js",
+    "static/js/3.68b2cead.chunk.js.map": "/watchit-movie-app/static/js/3.68b2cead.chunk.js.map",
+    "index.html": "/watchit-movie-app/index.html",
+    "static/css/main.c87939c5.chunk.css.map": "/watchit-movie-app/static/css/main.c87939c5.chunk.css.map",
+    "static/js/2.0a986069.chunk.js.LICENSE.txt": "/watchit-movie-app/static/js/2.0a986069.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9c549bbf.js",
+    "static/js/2.0a986069.chunk.js",
+    "static/css/main.c87939c5.chunk.css",
+    "static/js/main.7edbfb3b.chunk.js"
+  ]
+}

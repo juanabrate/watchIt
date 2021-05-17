@@ -1,6 +1,15 @@
-grid-container {
+.grid {
     
     display: grid;
-    grid-template-columns: 200px 100px;
+    padding-top: 2%;
+    justify-content: center;
+    grid-template-columns: 27% 27%;
+    grid-auto-rows: minmax(27%, auto);
+    grid-gap: 1%;
 
+}
+
+.h1 {
+    color:white;
+    background-color: black;
 }

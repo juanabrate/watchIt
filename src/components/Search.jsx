@@ -42,14 +42,14 @@ export default function Search() {
             <div style={{marginTop:'3%',justifyContent:'center', textAlign:'left', display:'flex', flexDirection:'column'}}>
                 
                 {query != "" ? movies.map((item) => 
-                    <div style={{position: 'relative', textAlign:'left', display:'flex', flexDirection:'row', justifyContent:'center', paddingBottom:'2%', alignItems:'center'}}>
+                    <div style={{position: 'relative', display:'flex', flexDirection:'row', justifyContent:'center', paddingBottom:'2%', alignItems:'center'}}>
                         <span style={{left:'34%', position:'absolute', maxWidth:'300px'}}>
-                            <NavLink style={{textAlign:'left',textDecoration:'none'}} to={`/movie/${item.id}`}>
+                            <NavLink style={{textAlign:'justify',textDecoration:'none'}} to={`/movie/${item.id}`}>
                                 <Links key={item.id}>{item.original_title}</Links>
                             </NavLink>
                         </span>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <img style={{float:'right', paddingLeft:'30%'}} src={`http://image.tmdb.org/t/p/w92${item.poster_path}`} alt="No image found"/>
+                        <img style={{float:'right', paddingLeft:'25%'}} src={`http://image.tmdb.org/t/p/w92${item.poster_path}`} alt="No image found"/>
                     </div>
                 ) : null}
 

@@ -1,13 +1,14 @@
 import React, {useContext, useState, useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
-import {UseFavs} from './favLogic';
+import {UseFavs, Remove} from './favLogic';
 import axios from 'axios';
 
  
 export default function Favorites() {   
     
     const favs = UseFavs();
+    const removeFavs = Remove();
 
     const [movies, setMovies] = useState([]);
     
@@ -23,12 +24,18 @@ export default function Favorites() {
                 {favs ? favs.map((item) => 
                     <div key={item.id} style={{textAlign:'left', display:'flex', flexDirection:'row', justifyContent:'center', paddingBottom:'2%', alignItems:'center'}}>
                         <NavLink style={{textAlign:'left',textDecoration:'none'}} to={`/movie/${item.id}`}>
-                            <Links>{item.original_title}</Links>
+                            <Links><b style={{color: 'yellow'}}>★</b>&nbsp;{item.original_title}</Links>
                         </NavLink>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <img src={`http://image.tmdb.org/t/p/w92${item.poster_path}`} alt="No image found"/>
-                    </div>
+                        
+                    {/* <button onClick={() => removeFavs(item.id)} style={{float:'left', marginTop:'5%', borderRadius:'10%', fontFamily:'calibri'}}>
+                        X
+                    </button> */}
+                </div>
+                    
                 ) : null}
+                
 
             </div>
             <div style={{backgroundColor:'black', height:'100vh'}}></div>

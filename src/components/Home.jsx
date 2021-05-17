@@ -42,8 +42,9 @@ export default function Home() {
     let id11 = upcoming && upcoming[11] && upcoming[11].id;
 
     return (
-        <div style={{backgroundColor:'black'}}>
-            {/* <h1 className='h1'>Upcoming</h1> */}
+        <div style={{position:'relative', backgroundColor:'black'}}>
+            {/* <div className="h1"><h2>Upcoming</h2></div>
+            <div className="h2"><h1>2021</h1></div> */}
         <div className="grid">
             <NavLink to={`/movie/${id}`}>
                 <div className="grid-item grid-item-1">

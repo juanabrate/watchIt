@@ -8,7 +8,7 @@ export default function Nav() {
             <NavBar>
                 <NavLink to="/home" style={{textDecoration:'none', color:'white'}}>
                     <span>
-                        HOME
+                        UPCOMING
                     </span>
                 </NavLink >
                 <NavLink to="/search" style={{textDecoration:'none', color:'white'}}>

@@ -2,7 +2,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import React, {useState, useEffect} from "react";
 import { NavLink } from 'react-router-dom';
-// import { NavLink } from 'react-router-dom';
+import Loader from "react-loader-spinner";
 
 // console.log('bad req', axios('https://api.themoviedb.org/3/search/movie?api_key=4295c0e29a9f109077cc7792f1675b63&query=')
 // .then(res => {
@@ -12,37 +12,38 @@ import { NavLink } from 'react-router-dom';
 export default function Search() {   
     
     const [query, setQuery] = useState("");   
-    // const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-
         const queryUrl = `https://api.themoviedb.org/3/search/movie?api_key=4295c0e29a9f109077cc7792f1675b63&query=${query}`;
-        // const imgUrl = `http://image.tmdb.org/t/p/w342${img_path}`;
-
-        if (query !== "") {
-            // setLoading(true);s
-            axios(queryUrl)
-                .then(res => {
-                    // setLoading(false);
-
-                    setMovies(res.data.results);
-                    
-
-                });
-        }
+        async function load() {
+            setLoading(true);
+            await axios(queryUrl)
+            .then(res => {  
+                setMovies(res.data.results);   
+                setTimeout(function(){ setLoading(false); }, 1500);                 
+            });
+        } 
+        if (query !== "") {       
+            load();                                        
+        }        
     }, [query]);
 
     let release = movies && movies.release_date;
     // let year = release && release.substr(0,4);
 
-    return (
+    return  (
         <div style={{backgroundColor:'black', paddingTop:'2%'}}>
 
             <Input type='text' placeholder="Search..." onChange={e => setQuery(e.target.value)} /> 
 
-            <div style={{marginTop:'3%',justifyContent:'center', textAlign:'left', display:'flex', flexDirection:'column'}}>
+            <div style={{position:'relative', marginTop:'3%',justifyContent:'center', textAlign:'left', display:'flex', flexDirection:'column'}}>
                 
+                {loading ? <div style={{paddingLeft:'15%'}}>
+                    <Loader type="ThreeDots" color="cyan"/>
+                </div> : null}
+
                 {query !== "" ? movies.map((item) => 
                 <NavLink style={{textAlign:'justify',textDecoration:'none'}} to={`/movie/${item.id}`}>
                     <Div>
@@ -61,10 +62,15 @@ export default function Search() {
                 ) : null}
 
             </div>
+            
             <div style={{backgroundColor:'black', height:'83vh'}}></div>
-            {/* {loading ? <p>di} */}
+
+    
+         
 
         </div>
+
+    
             
 
         

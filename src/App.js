@@ -8,6 +8,7 @@ import Movie from './components/Movie';
 import Nav from './components/Nav';
 import Favorites from './components/Favorites';
 import { FavProvider } from './components/favLogic';
+// import Form from './components/Form';
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/home" component={Home} /> 
           <Route exact path="/movie/:id" component={Movie} />        
           <Route exact path="/favorites" component={Favorites} />
+          {/* <Route exact path="/form" component={Form}/> */}
         </BrowserRouter>   
       </div>
 </FavProvider>

@@ -39,7 +39,7 @@ export default function Search() {
     return (
         <div style={{backgroundColor:'black', paddingTop:'2%'}}>
 
-            <Input placeholder='Movies' type='text' onChange={e => setQuery(e.target.value)} /> 
+            <Input type='text' placeholder="Search..." onChange={e => setQuery(e.target.value)} /> 
 
             <div style={{marginTop:'3%',justifyContent:'center', textAlign:'left', display:'flex', flexDirection:'column'}}>
                 
@@ -103,6 +103,6 @@ transition:0.3s;
 
 const Input = styled.input`
 border-radius:1px;
-/* background-color:grey; */
+background-color:#999999;
 border-style:none;
 `

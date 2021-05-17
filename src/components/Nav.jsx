@@ -5,24 +5,24 @@ export default function Nav() {
         <>
         <div style={{display:'flex', alignItems:'center', justifyContent: 'center', backgroundColor: '#080808', fontFamily:'calibri'}}>
             <NavBar>
-                <NavLink to="/home" style={{textDecoration:'none', color:'white'}}>
-                    <span>
+                <NavLink to="/home" style={{textDecoration:'none', color:'grey'}}>
+                    <Span>
                         UPCOMING
-                    </span>
+                    </Span>
                 </NavLink >
-                <NavLink to="/search" style={{textDecoration:'none', color:'white'}}>
-                    <span>
+                <NavLink to="/search" style={{textDecoration:'none', color:'grey'}}>
+                    <Span>
                         SEARCH
-                    </span>  
+                    </Span>  
                 </NavLink>
-                <NavLink to="/favorites" style={{textDecoration:'none', color:'white'}}>
-                    <span>
+                <NavLink to="/favorites" style={{textDecoration:'none', color:'grey'}}>
+                    <Span>
                         FAVORITES
-                    </span>
+                    </Span>
                 </NavLink>           
             </NavBar>            
         </div>
-        <div style={{display: 'flex', flexDirection:'row', backgroundColor:'cyan', height:'2px', width:'100%'}}></div>
+        <div style={{display: 'flex', flexDirection:'row', backgroundColor:'cyan', height:'1px', width:'100%'}}></div>
         </>
     )
 }
@@ -38,4 +38,12 @@ const NavBar = styled.div`
     height: 5.5vh;
     background-color: #080808;
     color: white;
+`
+
+const Span = styled.span`
+transition:0.5s;
+&:hover {
+    color: white;
+    transition-duration:0.5s;
+}
 `

@@ -66,7 +66,7 @@ let plot = details.overview;
                 <div style={{display:'flex', flexDirection:'row', fontSize:'12px', marginTop:'5%',color:'grey'}}>
                     
                             {genres && genres.map(g => 
-                                <p key={g.id}>{g.name}&nbsp;&nbsp;</p>
+                                <p key={g.id}>{g.name}&nbsp;&nbsp;&nbsp;&nbsp;</p>
                             )}
                 </div>
                 <div>

@@ -43,7 +43,7 @@ export default function Search() {
                 {loading ?
                 
                 <div style={{width:'100%', height:'100%', display:'flex', alignItems:'center', justifyContent:'center', alignContent:'center'}}>
-                    <Loader type="ThreeDots" color="white" height={150} width={150}/>
+                    <Loader type="Puff" color="white" height={150} width={150}/>
                 </div> 
                 
                 : 

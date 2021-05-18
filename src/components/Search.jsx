@@ -104,10 +104,10 @@ align-items: center;
 /* border-style:solid;
 border-width:2px; */
 border-color: #202020;
-transition:0.3s;
+transition:0.4s;
 &:hover {
-    transform: scale(1.1);
-    transition-duration:0.3s;
+    transform: scale(1.2);
+    transition-duration:0.4s;
 }
 `
 

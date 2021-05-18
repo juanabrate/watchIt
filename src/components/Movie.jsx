@@ -60,7 +60,7 @@ let plot = details.overview;
                     <b>{year}</b>&nbsp;&nbsp;&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;&nbsp;&nbsp;<b> {duration} min</b>
                 </div>
                 {/* <p style={{fontSize:'12px', textAlign:'left'}}>"{tagline}"</p> */}
-                <p style={{fontSize:'14px', textAlign:'left', marginTop:'10%'}}>
+                <p style={{fontSize:'15px', textAlign:'left', marginTop:'10%'}}>
                     {plot}
                 </p>
                 <div style={{display:'flex', flexDirection:'row', fontSize:'15px', marginTop:'5%',color:'grey'}}>

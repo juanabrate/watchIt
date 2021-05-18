@@ -56,14 +56,14 @@ let plot = details.overview;
                 <h1 style={{fontSize:'35px', textAlign:'left'}}>{details.title}
                 <span style={{paddingLeft:'20%', fontSize:'22px'}}>{vote}&nbsp;<b style={{color: 'yellow'}}>★</b></span>
                 </h1>
-                <div style={{display:'flex', flexDirection:'row', fontSize:'13px', color:'grey', marginTop:'-2%'}}>
+                <div style={{display:'flex', flexDirection:'row', fontSize:'15px', color:'grey', marginTop:'-2%'}}>
                     <b>{year}</b>&nbsp;&nbsp;&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;&nbsp;&nbsp;<b> {duration} min</b>
                 </div>
                 {/* <p style={{fontSize:'12px', textAlign:'left'}}>"{tagline}"</p> */}
                 <p style={{fontSize:'14px', textAlign:'left', marginTop:'10%'}}>
                     {plot}
                 </p>
-                <div style={{display:'flex', flexDirection:'row', fontSize:'12px', marginTop:'5%',color:'grey'}}>
+                <div style={{display:'flex', flexDirection:'row', fontSize:'15px', marginTop:'5%',color:'grey'}}>
                     
                             {genres && genres.map(g => 
                                 <p key={g.id}>{g.name}&nbsp;&nbsp;&nbsp;&nbsp;</p>

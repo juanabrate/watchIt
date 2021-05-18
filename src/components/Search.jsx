@@ -115,4 +115,7 @@ const Input = styled.input`
 border-radius:1px;
 background-color:#CECECE;
 border-style:none;
+&:focus {
+    background-color:white;
+}
 `

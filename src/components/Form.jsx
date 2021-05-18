@@ -1,28 +1,23 @@
 import React, {useState} from 'react';
+import {useForm} from 'react-hook-form';
 
 export default function Form() {
-    const [user, setUser] = useState("");
-    const [pass, setPass] = useState("");
+    const {register, handleSubmit, errors} = useForm();
+    const [data, setData] = useState("");
+    console.log(register)
 
-    // function handleUser(e) {
-    //     setUser(e.target.value);
-    //     console.log(user);
-    // }
-    // function handlePass(e) {
-    //     setPass(e.target.value);
-    //     console.log(pass);;
-    // }
-    function submitForm() {
-        let message = `Welcome ${user}! Your password is ${pass}`;
-        return message
-    }
+   const onSubmit = data => {
+        console.log(data)
+        console.log(errors && errors.mess)
+        setData(data.firstName)
+    };
     return (
-       <> 
-            <input type="text" placeholder="user" onChange={e => setUser(e.target.value)} required></input>
-            <input type="password" placeholder="pass" onChange={e => setPass(e.target.value)} required></input>
-            <button type="button" onClick={submitForm}>Submit</button>
-
-            <h4>{}</h4>
-    </>
+       <form onSubmit={handleSubmit(onSubmit)}> 
+            <input type="email" {...register("firstName", {required:true})}></input>
+            <input type="password" {...register("pass", {minLength:8})} ></input>
+          
+            <input type="submit" placeholder="forro"></input>
+        {data ? <p>Welcome {data} </p> : null}
+    </form>
     )
 }

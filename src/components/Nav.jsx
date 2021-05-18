@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default function Nav() {
     return (
         <>
-        <div style={{display:'flex', alignItems:'center', justifyContent: 'center', backgroundColor: '#080808', fontFamily:'calibri'}}>
+        <div style={{display:'flex', alignItems:'center', justifyContent: 'center', backgroundColor: 'black', fontFamily:'calibri'}}>
             <NavBar>
                 <NavLink to="/home" style={{textDecoration:'none', color:'grey'}}>
                     <Span>
@@ -36,7 +36,7 @@ const NavBar = styled.div`
     width: 42vh;
     /* padding-right: 40%; */
     height: 5.5vh;
-    background-color: #080808;
+    background-color: black;
     color: white;
 `
 

@@ -13,18 +13,19 @@ const pushFavs = UpdateFavs();
 const { id } = useParams(); 
 
 const [details, setDetails] = useState({});
-const [loading, setLoading] = useState(true);
+const [loading, setLoading] = useState(false);
 
-useEffect(() => {
+useEffect(() => {    
 
-    axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4295c0e29a9f109077cc7792f1675b63`)
-    .then(res => setDetails(res && res.data),
+    async function load() {
+        setLoading(true)
+        await axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4295c0e29a9f109077cc7792f1675b63`)
+        .then(res => setDetails(res && res.data))
+        setTimeout(function(){ setLoading(false); }, 700);
+    }
+    load();
 
-    setLoading(false)
-
-    
-
-)}, [id]);
+}, [id]);
 
 console.log('movie', details)
 
@@ -42,7 +43,9 @@ let plot = details.overview;
 
 // console.log(favs);
 
-    return loading ? <Loader type='Grid' color='white' timeout={3000}/> : (
+    return loading ? <div style={{backgroundColor:'black', height:'100vh', display:'flex', justifyContent:'center', alignContent:'center', flexDirection:'column'}}>
+    <Loader type="Puff" color="white" height={300} width={300}/>
+    </div> : (
 <>
         <div style={{fontFamily:'calibri', display:'flex', flexDirection:'row', padding: '3%', alignContent:'center', backgroundColor:'black', color:'white'}}>
             

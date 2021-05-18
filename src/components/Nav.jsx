@@ -22,7 +22,7 @@ export default function Nav() {
                 </NavLink>           
             </NavBar>            
         </div>
-        <div style={{display: 'flex', flexDirection:'row', backgroundColor:'cyan', height:'1px', width:'100%'}}></div>
+        <div style={{display: 'flex', flexDirection:'row', backgroundColor:'white', height:'1px', width:'100%'}}></div>
         </>
     )
 }

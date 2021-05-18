@@ -17,7 +17,7 @@ export default function Home() {
                 setLoading(true);
                 await axios('https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2021-05-15&primary_release_date.lte=2021-07-15&api_key=4295c0e29a9f109077cc7792f1675b63')
                 .then(res => setUpcoming(res.data.results));
-                setTimeout(function(){ setLoading(false); }, 1000);
+                setTimeout(function(){ setLoading(false); }, 700);
         }
 
         loading()       
@@ -51,7 +51,7 @@ export default function Home() {
     let id11 = upcoming && upcoming[11] && upcoming[11].id;
 
     return loading ? <div style={{backgroundColor:'black', height:'100vh', display:'flex', justifyContent:'center', alignContent:'center', flexDirection:'column'}}>
-            <Loader type="ThreeDots" color="cyan"/>
+            <Loader type="Puff" color="white" height={300} width={300}/>
             </div> 
             : (
             <>

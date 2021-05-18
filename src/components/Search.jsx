@@ -22,7 +22,7 @@ export default function Search() {
             await axios(queryUrl)
             .then(res => {  
                 setMovies(res.data.results);   
-                setTimeout(function(){ setLoading(false); }, 1000);                 
+                setTimeout(function(){ setLoading(false); }, 900);                 
             });
         } 
         if (query !== "") {       
@@ -42,8 +42,8 @@ export default function Search() {
                 
                 {loading ?
                 
-                <div style={{width:'100%', display:'flex', alignItems:'center', justifyContent:'center', alignContent:'center'}}>
-                    <Loader type="ThreeDots" color="cyan"/>
+                <div style={{width:'100%', height:'100%', display:'flex', alignItems:'center', justifyContent:'center', alignContent:'center'}}>
+                    <Loader type="BallTriangle" color="white" height={150} width={150}/>
                 </div> 
                 
                 : 

@@ -27,7 +27,7 @@ useEffect(() => {
 
 }, [id]);
 
-console.log('movie', details)
+// console.log('movie', details)
 
 // let popularity = details && details.popularity;
 let genres = details && details.genres;

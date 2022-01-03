@@ -42,8 +42,10 @@ export function FavProvider({ children }) {
     }
 
     function remove(id) {
-       let newArr = favs.filter(el => el.id === id);
+        //Remove movie object from state and local storage. 
+       let newArr = favs.filter(el => el.id !== id);
        setFavs(newArr); 
+       saveFavoriteToLocalStorage(newArr);
     }
 
     return (

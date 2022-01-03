@@ -1,15 +1,20 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
-import {UseFavs} from './favLogic';
+import {UseFavs, Remove} from './favLogic';
+import preventClickthrough from 'react-prevent-clickthrough';
  
 export default function Favorites() {   
     
     const favs = UseFavs();
-    // const removeFavs = Remove();
+    const removeFromFav = Remove();
     
-
-    // console.log('favo', favs)
+    
+    const handleXClick = (e, id) => {
+        // console.log(e, 'e');
+        // preventClickthrough(e);
+        removeFromFav(id);        
+    }
 
 
     return (
@@ -29,9 +34,9 @@ export default function Favorites() {
                         
                         <img style={{float:'right', paddingLeft:'30%'}} src={`http://image.tmdb.org/t/p/w185${item.poster_path}`} alt="Pic not found"/>
                 
-                    {/* <button onClick={() => removeFavs(item.id)} style={{float:'left', marginTop:'5%', borderRadius:'10%', fontFamily:'calibri'}}>
-                        X
-                    </button> */}
+                        <button onClick={(e) => {handleXClick(e, item.id)}} style={{position:'absolute', right:'23%'}}>
+                            X
+                        </button>
                 </Div>
                 </NavLink>
                     

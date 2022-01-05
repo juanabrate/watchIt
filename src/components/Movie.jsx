@@ -4,11 +4,14 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Loader from "react-loader-spinner";
 import {UpdateFavs} from './favLogic';
+import {UseFavs, Remove} from './favLogic';
 
 export default function Movie() {
 
 
 const pushFavs = UpdateFavs();
+const removeFav = Remove();
+const favs = UseFavs();
 
 const { id } = useParams(); 
 
@@ -43,6 +46,11 @@ let plot = details.overview;
 
 // console.log(favs);
 
+let boolFav = false;
+if (favs.some(e => e.id == details.id)) {
+    boolFav = true;
+}
+
     return loading ? <div style={{backgroundColor:'black', height:'100vh', display:'flex', justifyContent:'center', alignContent:'center', flexDirection:'column'}}>
     <Loader type="Puff" color="white" height={300} width={300}/>
     </div> : (
@@ -73,6 +81,13 @@ let plot = details.overview;
                     <Button onClick={() => pushFavs(details)}>
                         FAV
                     </Button>
+                    { boolFav ? 
+                    <Button onClick={() => removeFav(details.id)}>
+                        Remove FAV
+                    </Button>
+
+                    : null}
+                    
                 </div>
                 
             </div>      

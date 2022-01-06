@@ -17,17 +17,15 @@ export default function Search() {
 
     useEffect(() => {
         const queryUrl = `https://api.themoviedb.org/3/search/movie?api_key=4295c0e29a9f109077cc7792f1675b63&query=${query}`;
-        async function load() {
+        const load = () => {
             setLoading(true);
-            await axios(queryUrl)
+            axios(queryUrl)
             .then(res => {  
-                setMovies(res.data.results);   
-                setTimeout(function(){ setLoading(false); }, 700);                 
+                setMovies(res?.data?.results);   
+                setTimeout(() => setLoading(false), 700);                 
             });
         } 
-        if (query !== "") {       
-            load();                                        
-        }        
+        if (query !== "") load();                                                
     }, [query]);
 
     let release = movies && movies.release_date;
@@ -59,7 +57,7 @@ export default function Search() {
                                 </Links>
                             
                         </span>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <Img style={{float:'right', paddingLeft:'25%'}} src={`http://image.tmdb.org/t/p/w185${item.poster_path}`} alt=":/"/>
                     </Div>
                 </NavLink>
@@ -107,7 +105,8 @@ border-color: #202020;
 transition:0.4s;
 &:hover {
     transform: scale(1.2);
-    transition-duration:0.4s;
+    transition-duration: 0.4s;
+    background-color: #101010
 }
 `
 

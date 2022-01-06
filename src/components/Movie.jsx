@@ -1,34 +1,33 @@
 import axios from 'axios';
-import React, {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Loader from "react-loader-spinner";
-import {UpdateFavs} from './favLogic';
-import {UseFavs, Remove} from './favLogic';
+import { UpdateFavs } from './favLogic';
+import { UseFavs, Remove } from './favLogic';
 
 export default function Movie() {
-
 
 const pushFavs = UpdateFavs();
 const removeFav = Remove();
 const favs = UseFavs();
-
 const { id } = useParams(); 
 
 const [details, setDetails] = useState({});
 const [loading, setLoading] = useState(false);
 
 useEffect(() => {    
-
-    async function load() {
+    const load = () => {
         setLoading(true)
-        await axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4295c0e29a9f109077cc7792f1675b63`)
-        .then(res => setDetails(res && res.data))
-        setTimeout(function(){ setLoading(false); }, 700);
+        axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4295c0e29a9f109077cc7792f1675b63`)
+        .then(res => setDetails(res?.data))
+        setTimeout(() => setLoading(false), 700);
     }
     load();
-
 }, [id]);
+
+let boolFav = false;
+if (favs.some(e => e.id == details.id)) boolFav = true;
 
 // console.log('movie', details)
 
@@ -46,10 +45,7 @@ let plot = details.overview;
 
 // console.log(favs);
 
-let boolFav = false;
-if (favs.some(e => e.id == details.id)) {
-    boolFav = true;
-}
+
 
     return loading ? <div style={{backgroundColor:'black', height:'100vh', display:'flex', justifyContent:'center', alignContent:'center', flexDirection:'column'}}>
     <Loader type="Puff" color="white" height={300} width={300}/>
@@ -81,13 +77,12 @@ if (favs.some(e => e.id == details.id)) {
                     <Button onClick={() => pushFavs(details)}>
                         FAV
                     </Button>
+
                     { boolFav ? 
                     <Button onClick={() => removeFav(details.id)}>
                         Remove FAV
                     </Button>
-
-                    : null}
-                    
+                    : null }                    
                 </div>
                 
             </div>      

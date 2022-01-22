@@ -25,10 +25,8 @@ export default function Home() {
                 loading();           
         }, []);
 
-        console.log(upcoming)
 
-        const poster_id_iterator = () => {
-                
+        const poster_id_iterator = () => {                
                 const dataObjectArray = [];
 
                 for (let i = 0; i < 20; i++) {

@@ -4,11 +4,6 @@ import React, {useState, useEffect} from "react";
 import { NavLink } from 'react-router-dom';
 import Loader from "react-loader-spinner";
 
-// console.log('bad req', axios('https://api.themoviedb.org/3/search/movie?api_key=4295c0e29a9f109077cc7792f1675b63&query=')
-// .then(res => {
-//     console.log(res)
-// }));
-
 export default function Search() {   
     
     const [query, setQuery] = useState("");   
@@ -28,96 +23,102 @@ export default function Search() {
         if (query !== "") load();                                                
     }, [query]);
 
-    let release = movies && movies.release_date;
-    // let year = release && release.substr(0,4);
-
     return  (
-        <div style={{backgroundColor:'black', paddingTop:'2%'}}>
-
+        <MainDiv>            
             <Input type='text' placeholder="Search..." onChange={e => setQuery(e.target.value)} /> 
-
-            <div style={{marginTop:'3%',justifyContent:'center', textAlign:'left', display:'flex', flexDirection:'column'}}>
+            <SearchDiv>
                 
                 {loading ?
                 
-                <div style={{width:'100%', height:'100%', display:'flex', alignItems:'center', justifyContent:'center', alignContent:'center'}}>
-                    <Loader type="Puff" color="white" height={150} width={150}/>
-                </div> 
+                <LoaderDiv> <Loader type="Puff" color="white" height={150} width={150}/> </LoaderDiv> 
                 
                 : 
 
                 query !== "" ? movies.map((item) => 
-                <NavLink style={{textAlign:'justify',textDecoration:'none'}} to={`/movie/${item.id}`}>
-                    <Div>
-                        <span style={{left:'30%', position:'absolute', maxWidth:'350px', fontFamily:'calibri', fontSize:'19px'}}>
-                            
-                                <Links key={item.id}>{item.original_title}
+
+                <NavLink to={`/movie/${item.id}`} key={item.id} style={{textAlign:'justify',textDecoration:'none'}}>
+                    <MovieCard>
+                        <MovieData>                            
+                                <P key={item.id}> {item.original_title}
                                 <br/>
-                                <span style={{color:'grey'}}>{ item && item.release_date && item.release_date.substr(0,4)}</span>
-                                </Links>
-                            
-                        </span>
+                                <span style={{color:'grey'}}> {item.release_date?.substr(0,4)} </span>
+                                </P>                            
+                        </MovieData>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <Img style={{float:'right', paddingLeft:'25%'}} src={`http://image.tmdb.org/t/p/w185${item.poster_path}`} alt=":/"/>
-                    </Div>
+                        <Img src={`http://image.tmdb.org/t/p/w185${item.poster_path}`} alt=":/"/>
+                    </MovieCard>
                 </NavLink>
+
                 ) : null}
-
-            </div>
-            
-            <div style={{backgroundColor:'black', height:'83vh'}}></div>
-
-    
-         
-
-        </div>
-
-    
-            
-
-        
-
+            </SearchDiv>            
+            <Footer></Footer>    
+        </MainDiv>
     )
 }
 
-const Links = styled.p`
-text-align: left;
-text-decoration: none;
-color:white;
-`
 
+const MainDiv = styled.div`
+    background-color: black;
+    padding-top: 2%;
+`
+const SearchDiv = styled.div`
+    margin-top: 3%;
+    justify-content: center;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+`
+const LoaderDiv = styled.div`
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    align-content: center;
+`
+const P = styled.p`
+    text-align: left;
+    text-decoration: none;
+    color: white;
+`
 const Img = styled.img`
-
+    float: right;
+    padding-left: 25%;
 `
-
-const Div = styled.div`
-position:relative;
-display:flex;
-flex-direction:row;
-justify-content:center;
-padding-bottom:1%;
-padding-top:1%;
-/* margin-bottom:0.5%; */
-margin-top: 3%;
-align-items: center;
-/* border-style:solid;
-border-width:2px; */
-border-color: #202020;
-transition:0.4s;
-&:hover {
-    transform: scale(1.2);
-    transition-duration: 0.4s;
-    background-color: #303030;
-}
+const MovieCard = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    margin-top: 3%;
+    align-items: center;
+    border-color: #202020;
+    transition: 0.4s;
+        &:hover {
+            transform: scale(1.2);
+            transition-duration: 0.4s;
+            background-color: #252525;
+        }
 `
-
+const MovieData = styled.div`
+    left: 30%; 
+    position: absolute;
+    max-width: 350px;
+    font-family: calibri;
+    font-size: 19px;
+`
 const Input = styled.input`
-border-radius: 5px;
-background-color:#cececeed;
-border-style: none;
-&:focus {
-    background-color: white;
+    border-radius: 5px;
+    background-color:#cececeed;
     border-style: none;
+        &:focus {
+            background-color: white;
+            border-style: none;
 }
-
+`
+const Footer = styled.footer`
+    background-color: black;
+    height: 83vh;
 `

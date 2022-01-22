@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-import './Home.css';
 import Loader from 'react-loader-spinner';
 import styled from 'styled-components';
 
@@ -44,16 +43,15 @@ export default function Home() {
                 : (
                 <>
         <GridDiv>
-                <div className="grid">
-
+                <Grid>
                 {poster_id_data?.map((e) => (
                         <NavLink to={`/movie/${e.id}`} key={e.id}>
-                                <div className="grid-item">
+                                <GridItem>
                                         <img src={`http://image.tmdb.org/t/p/w342${e.path}`} alt=":/" />
-                                </div> 
+                                </GridItem> 
                         </NavLink>
                 ))}
-                </div>
+                </Grid>
         </GridDiv>
         <Footer></Footer>
         </>
@@ -77,3 +75,20 @@ const Footer = styled.footer`
 background-color: black;
 height: 100vh;
 `
+const Grid = styled.div`
+        display: grid;
+        padding-top: 2%;
+        justify-content: center;
+        grid-template-columns: 27% 27%;
+        grid-auto-rows: minmax(27%, auto);
+        grid-gap: 1%;
+`
+const GridItem = styled.div`
+        transition: 0.2s;
+        &:hover {
+                transform: scale(1.06);
+                transition-duration: 0.5s;
+        }
+`
+    
+    

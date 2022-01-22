@@ -42,7 +42,6 @@ const NavBar = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 42vh;
-    /* padding-right: 40%; */
     height: 5.5vh;
     background-color: black;
     color: white;

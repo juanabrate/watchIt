@@ -1,24 +1,24 @@
 import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import './Home.css';
-import { NavLink } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 import styled from 'styled-components';
 
 // const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0Mjk1YzBlMjlhOWYxMDkwNzdjYzc3OTJmMTY3NWI2MyIsInN1YiI6IjYwOWU5N2Y2ODM5MDE4MDAzZmNjMzlhYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Bm5rF54lpCwETLSTpUOcWkeCAORlii85ar4SbkSGmKY';
 
-const date = new Date();
-console.log(date)
-
 export default function Home() {
 
         const [upcoming, setUpcoming] = useState([]);
-        const [loading, setLoading] = useState(false);    
+        const [loading, setLoading] = useState(false);          
 
-        useEffect(() => {        
+        useEffect(() => {     
+                const date = new Date();
+                const actualYear = date.getFullYear();
+                  
                 const loading = () => {
                         setLoading(true);
-                        axios('https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2021-12-01&primary_release_date.lte=2022-12-31&api_key=4295c0e29a9f109077cc7792f1675b63')
+                        axios(`https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${actualYear}-01-01&primary_release_date.lte=${actualYear}-12-31&api_key=4295c0e29a9f109077cc7792f1675b63`)
                         .then(res => setUpcoming(res?.data?.results));
                         setTimeout(() => setLoading(false), 700);
                 }

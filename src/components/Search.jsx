@@ -28,7 +28,7 @@ export default function Search() {
             <Input type='text' placeholder="Search..." onChange={e => setQuery(e.target.value)} /> 
             <SearchDiv>
                 
-                {loading ?
+                { loading ?
                 
                 <LoaderDiv> <Loader type="Puff" color="white" height={150} width={150}/> </LoaderDiv> 
                 
@@ -49,7 +49,7 @@ export default function Search() {
                     </MovieCard>
                 </NavLink>
 
-                ) : null}
+                ) : null }
             </SearchDiv>            
             <Footer></Footer>    
         </MainDiv>

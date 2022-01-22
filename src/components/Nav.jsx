@@ -1,9 +1,10 @@
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
+
 export default function Nav() {
     return (
         <>
-        <div style={{display:'flex', alignItems:'center', justifyContent: 'center', backgroundColor: 'black', fontFamily:'calibri'}}>
+        <MainDiv>
             <NavBar>
                 <NavLink to="/home" style={{textDecoration:'none', color:'grey'}}>
                     <Span>
@@ -21,12 +22,19 @@ export default function Nav() {
                     </Span>
                 </NavLink>           
             </NavBar>            
-        </div>
-        <div style={{display: 'flex', flexDirection:'row', backgroundColor:'white', height:'1px', width:'100%'}}></div>
+        </MainDiv>
+        <NavLine></NavLine>
         </>
     )
 }
 
+const MainDiv = styled.div`
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    font-family: calibri;
+`
 const NavBar = styled.div`
 
     display: flex;
@@ -41,9 +49,16 @@ const NavBar = styled.div`
 `
 
 const Span = styled.span`
-transition:0.5s;
-&:hover {
-    color: white;
-    transition-duration:0.5s;
-}
+    transition:0.5s;
+        &:hover {
+            color: white;
+            transition-duration:0.5s;
+        }
+`
+const NavLine = styled.div`
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    height: 1px;
+    width: 100%;
 `

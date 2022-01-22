@@ -8,63 +8,77 @@ export default function Favorites() {
 
     return (
         <Back>
-            <MovieDiv>                
+            <MovieDiv>           
+
                 {favs ? favs.map((item) => 
 
-                <NavLink to={`/movie/${item.id}`} style={{textAlign:'left',textDecoration:'none'}}>
-                    <Movie key={item.id}>
-                        <TitleSpan>                        
-                            <Title><b style={{color: 'yellow'}}>★</b>&nbsp;{item.original_title}</Title> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                        
-                        </TitleSpan> 
-                        <Img src={`http://image.tmdb.org/t/p/w185${item.poster_path}`} alt="Pic not found"/>
-                    </Movie>
+                <NavLink to={`/movie/${item.id}`} key={item.id} style={{textAlign:'justify',textDecoration:'none'}}>
+                    <MovieCard>
+                        <MovieData>                            
+                                <P key={item.id}> {item.original_title}
+                                <br/>
+                                <span style={{color:'grey'}}> {item.release_date?.substr(0,4)} </span>
+                                </P>                            
+                        </MovieData>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <Img src={`http://image.tmdb.org/t/p/w185${item.poster_path}`} alt=":/"/>
+                    </MovieCard>
                 </NavLink>
                
                 ) : null}
             </MovieDiv>
-            <div style={{backgroundColor:'black', height:'100vh'}}></div>
+            <Footer></Footer>
         </Back>
     )
 }
 
-const TitleSpan = styled.span`
-    left: 34%;
-    position: absolute;
-    max-width: 300px;
-`
-const Title = styled.p`
-    text-align: left;
-    text-decoration: none;
-    color: white;
-`
-const Movie = styled.div`
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: 2%;
-    padding-top: 2%;
-    /* margin-bottom: -2%; */
-    align-items: center;
-    transition: 0.5s;
-    &:hover {
-        transform: scale(1.1);
-        transition-duration: 0.5s;
-        background-color: #303030
-    }
-`
-const Back = styled.div`
-    padding-top: 2%;
-    background-color: black;
-`
+
 const MovieDiv  = styled.div`
-    marginTop: 3%;
+    margin-top: 3%;
     justify-content: center;
     text-align: left;
     display: flex;
     flex-direction: column;
 `
+const MovieCard = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    margin-top: 3%;
+    align-items: center;
+    border-color: #202020;
+    transition: 0.4s;
+        &:hover {
+            transform: scale(1.2);
+            transition-duration: 0.4s;
+            background-color: #252525;
+        }
+`
+const MovieData = styled.div`
+    left: 30%; 
+    position: absolute;
+    max-width: 350px;
+    font-family: calibri;
+    font-size: 19px;
+`
+const P = styled.p`
+    text-align: left;
+    text-decoration: none;
+    color: white;
+`
+const Back = styled.div`
+    padding-top: 2%;
+    background-color: black;
+`
+
 const Img = styled.img`
     float: right; 
     padding-left: 30%;
+`
+const Footer = styled.footer`
+    background-color: black;
+    height: 100vh;
 `

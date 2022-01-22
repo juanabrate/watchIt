@@ -50,7 +50,7 @@ const Movie = styled.div`
     &:hover {
         transform: scale(1.1);
         transition-duration: 0.5s;
-        background-color: #101010
+        background-color: #303030
     }
 `
 const Back = styled.div`

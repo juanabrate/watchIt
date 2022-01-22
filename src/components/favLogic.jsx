@@ -15,7 +15,6 @@ export function Remove() {
     return useContext(RemoveFav);
 } 
 
-
 export function FavProvider({ children }) {
     //Local Storage array load or creation if it doesn't exists. As this works paralell to favorites array react state, I include it in this context provider
     let localStorageFavArray = loadFavoritesFromLocalStorage();

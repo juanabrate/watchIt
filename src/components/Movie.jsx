@@ -28,6 +28,7 @@ useEffect(() => {
 
 let boolFav = false;
 if (favs.some(e => e.id == details.id)) boolFav = true;
+console.log(details,'details')
 
 // console.log('movie', details)
 

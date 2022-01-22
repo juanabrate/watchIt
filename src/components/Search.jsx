@@ -95,9 +95,10 @@ position:relative;
 display:flex;
 flex-direction:row;
 justify-content:center;
-padding-bottom:2%;
-padding-top:2%;
-margin-bottom:0.5%;
+padding-bottom:1%;
+padding-top:1%;
+/* margin-bottom:0.5%; */
+margin-top: 3%;
 align-items: center;
 /* border-style:solid;
 border-width:2px; */
@@ -106,15 +107,17 @@ transition:0.4s;
 &:hover {
     transform: scale(1.2);
     transition-duration: 0.4s;
-    background-color: #101010
+    background-color: #303030;
 }
 `
 
 const Input = styled.input`
-border-radius:1px;
-background-color:#CECECE;
-border-style:none;
+border-radius: 5px;
+background-color:#cececeed;
+border-style: none;
 &:focus {
-    background-color:white;
+    background-color: white;
+    border-style: none;
 }
+
 `

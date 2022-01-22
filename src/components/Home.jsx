@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Home.css';
 import { NavLink } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
+import styled from 'styled-components';
 
 // const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0Mjk1YzBlMjlhOWYxMDkwNzdjYzc3OTJmMTY3NWI2MyIsInN1YiI6IjYwOWU5N2Y2ODM5MDE4MDAzZmNjMzlhYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Bm5rF54lpCwETLSTpUOcWkeCAORlii85ar4SbkSGmKY';
 
@@ -41,18 +42,13 @@ export default function Home() {
         const poster_id_data = poster_id_iterator();    
     
 
-        return loading ? <div style={{backgroundColor:'black', height:'100vh', display:'flex', justifyContent:'center', alignContent:'center', flexDirection:'column'}}>
-                <Loader type="Puff" color="white" height={300} width={300}/>
-                </div> 
+        return loading ? <LoaderDiv> <Loader type="Puff" color="white" height={300} width={300}/> </LoaderDiv> 
                 : (
                 <>
-        <div style={{position:'relative', backgroundColor:'black'}}>
-            {/* <div className="h1"><h2>Upcoming</h2></div>
-            <div className="h2"><h1>2021</h1></div> */}
+        <GridDiv>
                 <div className="grid">
 
                 {poster_id_data?.map((e) => (
-                        // {poster_id_data? console.log(e) : null}
                         <NavLink to={`/movie/${e.id}`} key={e.id}>
                                 <div className="grid-item">
                                         <img src={`http://image.tmdb.org/t/p/w342${e.path}`} alt=":/" />
@@ -60,8 +56,26 @@ export default function Home() {
                         </NavLink>
                 ))}
                 </div>
-        </div>
-        <footer style={{backgroundColor:'black', height:'100vh'}}></footer>
+        </GridDiv>
+        <Footer></Footer>
         </>
     ) 
 }
+
+const LoaderDiv = styled.div`
+background-color: black;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-content: center;
+flex-direction: column;
+`
+const GridDiv = styled.div`
+position: relative;
+background-color: black;
+`
+
+const Footer = styled.footer`
+background-color: black;
+height: 100vh;
+`

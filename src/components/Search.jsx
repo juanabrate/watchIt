@@ -16,11 +16,11 @@ export default function Search() {
             setLoading(true);
             axios(queryUrl)
             .then(res => {  
-                setMovies(res?.data?.results);   
-                setTimeout(() => setLoading(false), 700);                 
+                setMovies(res?.data?.results);                                    
             });
         } 
-        if (query !== "") load();                                                
+        if (query !== "") load();  
+        setTimeout(() => setLoading(false), 1000);                                              
     }, [query]);
 
     return  (

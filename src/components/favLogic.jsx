@@ -34,8 +34,8 @@ export function FavProvider({ children }) {
         if (favs.some(e => e.id == nFav.id)) {
             return
         }
-        setFavs([...favs, nFav])
-        saveFavoriteToLocalStorage([...localStorageFavArray, nFav]);        
+        setFavs([nFav, ...favs])
+        saveFavoriteToLocalStorage([nFav, ...localStorageFavArray]);        
     }
     
     function remove(id) {

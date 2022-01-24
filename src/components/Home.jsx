@@ -59,21 +59,20 @@ export default function Home() {
 }
 
 const LoaderDiv = styled.div`
-background-color: black;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-content: center;
-flex-direction: column;
+        background-color: black;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
 `
 const GridDiv = styled.div`
-position: relative;
-background-color: black;
+        position: relative;
+        background-color: black;
 `
-
 const Footer = styled.footer`
-background-color: black;
-height: 100vh;
+        background-color: black;
+        height: 100vh;
 `
 const Grid = styled.div`
         display: grid;

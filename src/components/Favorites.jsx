@@ -1,12 +1,25 @@
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { UseFavs, Remove } from './favLogic';
 import styled from 'styled-components';
+import Loader from 'react-loader-spinner';
  
 export default function Favorites() {   
     
     const favs = UseFavs();
+    const [loading, setLoading] = useState(false);
 
-    return (
+    useEffect(() => {
+        const loading = () => {
+            setLoading(true);            
+        }
+        loading();          
+        setTimeout(() => setLoading(false), 700);
+    }, []);
+
+
+    return loading ? <LoaderDiv> <Loader type="Puff" color="white" height={300} width={300}/> </LoaderDiv> 
+    : (
         <Back>
             <MovieDiv>           
 
@@ -32,7 +45,13 @@ export default function Favorites() {
     )
 }
 
-
+const LoaderDiv = styled.div`
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;`
 const MovieDiv  = styled.div`
     margin-top: 3%;
     justify-content: center;

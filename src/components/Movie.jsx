@@ -19,15 +19,15 @@ export default function Movie() {
         const load = () => {
             setLoading(true)
             axios(`https://api.themoviedb.org/3/movie/${id}?api_key=4295c0e29a9f109077cc7792f1675b63`)
-            .then(res => setDetails(res?.data))
-            setTimeout(() => setLoading(false), 700);
+            .then(res => setDetails(res?.data))            
         }
         load();
+        setTimeout(() => setLoading(false), 700);
     }, [id]);
 
     let boolFav = false;
     if (favs.some(e => e.id == details.id)) boolFav = true;
-
+    let title = details?.title;
     let genres = details?.genres;
     let vote = details?.vote_average;
     let poster = `http://image.tmdb.org/t/p/w342${details?.poster_path}`;
@@ -43,7 +43,7 @@ export default function Movie() {
                 <MovieDiv>       
 
                     <H1>
-                        {details.title}
+                        {title}
                         <Vote>
                             {vote} &nbsp; <b style={{color: 'yellow'}}> ★ </b>
                         </Vote>
@@ -92,12 +92,12 @@ const MainDiv = styled.div`
     color: white;
 `
 const LoaderDiv = styled.div`
-    width: 100%; 
-    height: 100%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
     align-content: center;
+    flex-direction: column;
 `
 const MovieDiv = styled.div`
     padding-left: 7%;    
@@ -134,10 +134,10 @@ const Genres = styled.div`
 const FavButton = styled.button`
     float: left;
     margin-top: 5%;
-    border-radius: 10%;
+    border-radius: 25px;
     font-family: calibri;
-    background-color:black;
-    color:white;
+    background-color: black;
+    color: white;
     border-width: 1px;
     transition: 0.5s;
         &:hover{
@@ -150,7 +150,7 @@ const RemoveButton = styled.button`
     margin-left: 2%;
     float: left;
     margin-top: 5%;
-    border-radius: 10%;
+    border-radius: 25px;
     font-family: calibri;
     background-color: black;
     color: white;

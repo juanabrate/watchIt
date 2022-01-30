@@ -27,6 +27,7 @@ export default function Movie() {
 
     let boolFav = false;
     if (favs.some(e => e.id == details.id)) boolFav = true;
+
     let title = details?.title;
     let genres = details?.genres;
     let vote = details?.vote_average;
@@ -41,7 +42,6 @@ export default function Movie() {
             <MainDiv>            
                 <img src={poster} alt=":/"/>
                 <MovieDiv>       
-
                     <H1>
                         {title}
                         <Vote>
@@ -73,8 +73,7 @@ export default function Movie() {
                             Remove FAV
                         </RemoveButton>
                         : null }                    
-                    </div>
-                    
+                    </div>                    
                 </MovieDiv>                  
             </MainDiv>
             <Footer></Footer>
@@ -138,7 +137,7 @@ const FavButton = styled.button`
     font-family: calibri;
     background-color: black;
     color: white;
-    border-width: 1px;
+    border-width: 0.01px;
     transition: 0.5s;
         &:hover{
             border-color: gold;
@@ -154,7 +153,7 @@ const RemoveButton = styled.button`
     font-family: calibri;
     background-color: black;
     color: white;
-    border-width: 1px;
+    border-width: 0.1px;
     transition: 0.5s;
         &:hover{
             border-color: gold;

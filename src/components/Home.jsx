@@ -31,7 +31,7 @@ export default function Home() {
                 for (let i = 0; i < 20; i++) {
                         let path = upcoming[i]?.poster_path;
                         let id = upcoming[i]?.id;
-                        dataObjectArray.push( {path, id} )
+                        dataObjectArray.push( { path, id } )
                 }                
                 return dataObjectArray;
         }
@@ -42,20 +42,22 @@ export default function Home() {
         return loading ? <LoaderDiv> <Loader type="Puff" color="white" height={300} width={300}/> </LoaderDiv> 
                 : (
                 <>
-        <GridDiv>
-                <Grid>
-                {poster_id_data?.map((e) => (
-                        <NavLink to={`/movie/${e.id}`} key={e.id}>
-                                <GridItem>
-                                        <img src={`http://image.tmdb.org/t/p/w342${e.path}`} alt=":/" />
-                                </GridItem> 
-                        </NavLink>
-                ))}
-                </Grid>
-        </GridDiv>
-        <Footer></Footer>
-        </>
-    ) 
+                <GridDiv>
+                        <Grid>
+
+                        {poster_id_data?.map((e) => (
+                                <NavLink to={`/movie/${e.id}`} key={e.id}>
+                                        <GridItem>
+                                                <img src={`http://image.tmdb.org/t/p/w342${e.path}`} alt=":/" />
+                                        </GridItem> 
+                                </NavLink>
+                        ))}
+                        
+                        </Grid>
+                </GridDiv>
+                <Footer></Footer>
+                </>
+        ) 
 }
 
 const LoaderDiv = styled.div`

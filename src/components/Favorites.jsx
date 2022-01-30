@@ -21,7 +21,8 @@ export default function Favorites() {
     return loading ? <LoaderDiv> <Loader type="Puff" color="white" height={300} width={300}/> </LoaderDiv> 
     : (
         <Back>
-            <MovieDiv>           
+            <MovieDiv>    
+                       
 
                 {favs ? favs.map((item) => 
 
@@ -39,6 +40,8 @@ export default function Favorites() {
                 </NavLink>
                
                 ) : null}
+
+
             </MovieDiv>
             <Footer></Footer>
         </Back>

@@ -20,7 +20,7 @@ export default function Search() {
             });
         } 
         if (query !== "") load();  
-        setTimeout(() => setLoading(false), 1000);                                              
+        setTimeout(() => setLoading(false), 700);                                              
     }, [query]);
 
     return  (
@@ -28,9 +28,7 @@ export default function Search() {
             <Input type='text' placeholder="Search..." onChange={e => setQuery(e.target.value)} /> 
             <SearchDiv>
                 
-                { loading ?
-                
-                <LoaderDiv> <Loader type="Puff" color="white" height={150} width={150}/> </LoaderDiv> 
+                { loading ? <LoaderDiv> <Loader type="Puff" color="white" height={150} width={150}/> </LoaderDiv> 
                 
                 : 
 
@@ -50,6 +48,8 @@ export default function Search() {
                 </NavLink>
 
                 ) : null }
+
+
             </SearchDiv>            
             <Footer></Footer>    
         </MainDiv>
